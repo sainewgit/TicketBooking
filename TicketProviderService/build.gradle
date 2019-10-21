@@ -13,7 +13,9 @@ configurations {
 		extendsFrom annotationProcessor
 	}
 }
-
+bootJar {
+   archiveFileName = 'Ticket-Provider-Service'
+}
 repositories {
 	mavenCentral()
 }
