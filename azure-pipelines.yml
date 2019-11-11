@@ -16,7 +16,7 @@ steps:
    #gradleWrapperFile: '$(Parameters.wrapperScript)'
    gradleWrapperFile: 'TicketProviderService/gradlew' 
    workingDirectory: TicketProviderService    
-   tasks: 'build -x test'
+   tasks: 'build'
    codeCoverageToolOption: JaCoCo
 
 - task: CopyFiles@2
