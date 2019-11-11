@@ -11,12 +11,12 @@ pool:
 
 steps:
 - task: Gradle@2
-  displayName: 'gradlew build -x test'
+  displayName: 'gradlew build '
   inputs:
    #gradleWrapperFile: '$(Parameters.wrapperScript)'
     workingDirectory: TicketProviderService
     gradleWrapperFile: 'TicketProviderService/gradlew' 
-    tasks: 'build'
+    tasks: 'build -x test'
     #codeCoverageToolOption: JaCoCo
 
 - task: CopyFiles@2
