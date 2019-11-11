@@ -15,7 +15,7 @@ steps:
   inputs:
    #gradleWrapperFile: '$(Parameters.wrapperScript)'
     workingDirectory: TicketProviderService
-    gradleWrapperFile:'TicketProviderService/gradlew' 
+    gradleWrapperFile: 'TicketProviderService/gradlew' 
     tasks: '$(Parameters.tasks)'
     codeCoverageToolOption: JaCoCo
 
