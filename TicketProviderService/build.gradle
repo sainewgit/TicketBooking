@@ -19,6 +19,7 @@ repositories {
 }
 
 test {
+    exclude 'com/ticketprovider/TicketProviderSingleServiceApplicationTests'
     exclude 'com/ticketprovider/functional/**'
 }
 
