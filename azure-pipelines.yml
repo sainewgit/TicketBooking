@@ -13,8 +13,9 @@ steps:
 - task: Gradle@2
   displayName: 'gradlew build -x test'
   inputs:
-    gradleWrapperFile: '$(Parameters.wrapperScript)'
+   #gradleWrapperFile: '$(Parameters.wrapperScript)'
     workingDirectory: TicketProviderService
+    gradleWrapperFile:'TicketProviderService/gradlew' 
     tasks: '$(Parameters.tasks)'
     codeCoverageToolOption: JaCoCo
 
