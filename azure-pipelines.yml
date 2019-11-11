@@ -14,8 +14,8 @@ steps:
   displayName: 'gradlew build '
   inputs:
    #gradleWrapperFile: '$(Parameters.wrapperScript)'
-    workingDirectory: TicketProviderService
-    gradleWrapperFile: 'TicketProviderService/gradlew' 
+   gradleWrapperFile: 'TicketProviderService/gradlew' 
+    workingDirectory: TicketProviderService    
     tasks: 'build -x test'
     #codeCoverageToolOption: JaCoCo
 
@@ -28,7 +28,7 @@ steps:
   condition: succeededOrFailed()
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
+  displayName: 'Publish Artifact: ticket'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
