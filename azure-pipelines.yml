@@ -17,7 +17,7 @@ steps:
     workingDirectory: TicketProviderService
     gradleWrapperFile: 'TicketProviderService/gradlew' 
     tasks: '$(Parameters.tasks)'
-    codeCoverageToolOption: JaCoCo
+    #codeCoverageToolOption: JaCoCo
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
