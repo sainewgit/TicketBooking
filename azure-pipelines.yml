@@ -32,7 +32,7 @@ steps:
     containerRegistry: saidockerhub
     repository: 'saidocker45 / sai'
     Dockerfile: '**/TicketProviderService/Dockerfile'
-    tags: 'saidocker45/azuredev:$(Build.BuildId)'
+    tags: '$(Build.BuildId)'
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: ticket'
   inputs:
