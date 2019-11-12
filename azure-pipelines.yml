@@ -26,7 +26,13 @@ steps:
     Contents: '**/*.jar'
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
-
+- task: Docker@2
+  displayName: buildAndPush
+  inputs:
+    containerRegistry: saidockerhub
+    repository: 'saidocker45 / sai'
+    Dockerfile: '**/TicketProviderService/Dockerfile'
+    tags: 'saidocker45/azuredev:$(Build.BuildId)'
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: ticket'
   inputs:
