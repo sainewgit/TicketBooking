@@ -31,7 +31,7 @@ steps:
   inputs:
     containerRegistry: saidockerhub
     repository: 'saidocker45 / sai'
-    Dockerfile: '**/TicketProviderService/Dockerfile'
+    Dockerfile: '**/TicketProviderService/Dockerfile .'
     tags: '$(Build.BuildId)'
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: ticket'
