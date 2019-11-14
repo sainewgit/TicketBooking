@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  diary-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8040:8040"
+    restart: always
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ticketprovider
+      SPRING_DATASOURCE_USERNAME: ticketprovider
+      SPRING_DATASOURCE_PASSWORD: ticketprovider
+      #RDS_HOSTNAME: mysql
+      #RDS_HOSTNAME: 172.17.0.2
+      #RDS_PORT: 3306
+      #RDS_DB_NAME: ticketprovider
+      #RDS_USERNAME: ticketprovider
+      #RDS_PASSWORD: ticketprovider
+      
+    networks:
+      - backend
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: ticketprovider
+      MYSQL_USER: ticketprovider
+      MYSQL_PASSWORD: ticketprovider
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - backend
+volumes:
+  db-data:
+networks:
+  backend:
